@@ -1,0 +1,116 @@
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+// 		Below this contains all the general mixins, mainly used for redundant styles
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+// =======================
+// Useful Bootstrap Mixins
+// =======================
+// @mixin panel-variant(); arguments $border, $heading-text-color, $heading-bg-color, and $heading-border.
+// @mixin make-row(); arguments - $gutter
+// @mixin make-*-column(); arguments - $size, $gutter
+// @mixin button-variant(); arguments – $color, $background, and $border
+// @mixin gradient-*(); arguments – $start-color, $end-color, $start-percent, $end-percent
+// / gradient-horizontal(), gradient-vertical(), and gradient-horizontal-three-colors()
+// --------------------------------------------------------
+
+// change the color of links, including its selector states
+@mixin link-color($color) {
+	color: $color;
+
+	&:hover, &:active, &:focus {
+		color: lighten($color, 20%);
+	}
+}
+
+// simple SASS fontawesome mixin
+@mixin fa($icon) {
+	@extend .fa-#{$icon}
+}
+
+// =========================================
+// Media Queries Mixin (_include-media.scss)
+// =========================================
+// / @example scss - With a single set breakpoint
+// /  @include media(">phone") { }
+// /
+// / @example scss - With two set breakpoints
+// /  @include media(">phone", "<=tablet") { } 
+// /
+// / @example scss - With custom values
+// /  @include media(">=358px", "<850px") { } 
+// /
+// / @example scss - With set breakpoints with custom values
+// /  @include media(">desktop", "<=1350px") { } 
+// /
+// / @example scss - With a static expression
+// /  @include media("retina2x") { } 
+// /
+// / @example scss - Mixing everything
+// /  @include media(">=350px", "<tablet", "retina3x") { }
+// --------------------------------------------------------
+@mixin media($conditions...) {
+  @for $i from 1 through length($conditions) {
+    $conditions: set-nth($conditions, $i, parse-expression(nth($conditions, $i)));
+  }
+
+  $branches: get-query-branches($conditions);
+  $query: '';
+
+  @each $branch in $branches {
+    @if (str-length($query) != 0) {
+      $query: $query + ', ';
+    }
+
+    $query: $query + $branch;
+  }
+
+  @media #{$query} {
+    @content;
+  }
+}
+
+// =================
+// CSS3 Arrows Mixin
+// =================
+// / $direction: top, left, right, bottom, top-left, top-right, bottom-left, bottom-right
+// / $color: hex, rgb or rbga
+// / $size: px or em
+// / @example
+// / .element{
+// / 	@include arrow(top, #000, 50px);   
+// / }
+@mixin arrow($direction, $color, $size){
+	display: block;
+	height: 0;
+	width: 0;
+	
+	@if $direction == 'top' {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	} @else if $direction == 'right' {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	} @else if $direction == 'bottom' {
+		border-top: $size solid $color;
+		border-right: $size solid transparent;
+		border-left: $size solid transparent;
+	} @else if $direction == 'left' {
+		border-top: $size solid transparent;
+		border-right: $size solid $color;
+		border-bottom: $size solid transparent;
+	} @else if $direction == 'top-left' {
+		border-top: $size solid $color; 
+		border-right: $size solid transparent;
+	} @else if $direction == 'top-right' {
+		border-top: $size solid $color; 
+		border-left: $size solid transparent;
+	} @else if $direction == 'bottom-left' {
+		border-bottom: $size solid $color; 
+		border-right: $size solid transparent;
+	} @else if $direction == 'bottom-right' {
+		border-bottom: $size solid $color; 
+		border-left: $size solid transparent;
+	}
+}

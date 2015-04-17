@@ -1,0 +1,31 @@
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+// 		Below this contains all the placeholder elements, mainly used for @extend directives.
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+%nogutter {
+	margin: 0;
+	padding: 0;
+}
+
+%fluid-element {
+	max-width: 100%;
+}
+
+// visually hide an element in the site, but still is accessible.
+%visuallyhidden {
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+}
+
+// An easy way to truncate text with an ellipsis. Requires the element to be block or inline-block.
+%text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

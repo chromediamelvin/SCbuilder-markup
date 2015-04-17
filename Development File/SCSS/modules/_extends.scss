@@ -1,0 +1,24 @@
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+// 		Below this contains all the extended HTML tags, mainly used for fixed class tags
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+// /* CSS Selector Legends */
+// a > p: Select and style every <p> element where the parent is a <a> element
+// a + p: Select and style every <p> element that are placed immediately after <a> elements
+// a ~ p: Select and style every <p> elements that are preceded by a <a> element with the same parent
+// a[target]: Style all <a> elements with a target attribute
+// a[target=_blank]: Style <a> elements with a target="_blank"
+// [title~=flower]: Select and style elements with a title attribute containing the word "flower"
+// [lang|=en]: Select and style elements, where the lang attribute's value starts with "en"
+// [class^="test"]: Style all elements that have a class attribute value that begins with "test"
+// [class$="test"]: Style all elements that have a class attribute value that ends with "test"
+// [class*="test"]: Style all elements that have a class attribute value containing "test"
+
+[class$="-container"] {
+	padding: dynS(30, 1200, pc);
+}
+
+[class$="-wrapper"] {
+	margin: 0 auto;
+	width: dynS(960, 1200, pc);
+}

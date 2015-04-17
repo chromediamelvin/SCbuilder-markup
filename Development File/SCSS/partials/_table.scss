@@ -1,0 +1,73 @@
+.schedule-table,
+.schedule-table-head {
+	border: 1px solid rgba($text-black, $B-dividers);
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 100%;
+
+	th,
+	tr,
+	td {
+		padding: dynS(10, 1200, pc);
+		border: 1px solid rgba($text-black, $B-dividers);
+	}
+
+	.title {
+		width: 8%;
+	}
+
+}
+
+.schedule-table-head {
+	margin-bottom: dynS(10, 1800, pc);
+}
+
+.schedule-table {
+
+	.title {
+		padding: 0;
+	}
+
+	.time {
+		font-weight: 700;
+	}
+
+	.time-slot {
+		border-bottom: 1px solid rgba($text-black, $B-dividers);
+		box-sizing: border-box;
+		font-size: dynS(12, 16, em);
+		height: 54px;
+		padding-right: 5%;
+		padding-top: 2%;
+		text-align: right;
+	}
+
+	.content {
+		padding: 0;
+		vertical-align: top;
+	}
+
+	.allotment-blocks {
+		position: relative;
+		height: 0;
+	}
+
+	.block {
+		color: $text-white;
+		left: 2.5%;
+		position: absolute;
+		width: 95%;
+
+		> div {
+			border: 2px solid rgba($text-black, $B-dividers);
+			box-sizing: border-box;
+			font-size: dynS(11, 16, em);
+			line-height: 1.5em;
+			font-weight: 300;
+			overflow: hidden;
+			padding: 0 3%;
+			white-space:nowrap;
+		}
+
+	}
+}

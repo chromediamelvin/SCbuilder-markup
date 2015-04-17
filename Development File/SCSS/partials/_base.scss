@@ -1,0 +1,26 @@
+html {
+	font-size: 100%;
+}
+body {
+	color: rgba($text-black, $B-text);
+	font-family: $body-text;
+	font-size: 100%;
+	line-height: 1.2em;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: $title-text;
+	color: $primary;
+}
+
+hr {
+	margin: dynS(50, 1800, pc) 0;
+}

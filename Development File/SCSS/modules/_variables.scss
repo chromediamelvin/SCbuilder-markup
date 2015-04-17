@@ -1,0 +1,111 @@
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+// 		Below this contains all the variable elements, mainly used for redundant values
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+// ===============================================
+// Media Queries Declaration (_include-media.scss)
+// ===============================================
+
+// Creates a list of global breakpoints, you don't need to use them all just added most
+// / if not all sizes for digital resolutions.
+// * Naming Conventions PX-EM
+// / Private (PVT, PV2, PFC)
+// / Third Class (320-20), Second Class (480-30), First Class (600-37.5)
+// -----------------------------------------------
+// / Corporal (CPL 640-40) 
+// -----------------------------------------------
+// / Sergeant (SGT, SG2, SG1, CSG)
+// / Third Class (720-45), Second Class (768-48), First Class (992-62), Chief (1024-64)
+// -----------------------------------------------
+// / Lieutenant (2LT, 1LT)
+// / Second (1080-67.5), First (1200-75)
+// -----------------------------------------------
+// / Captain (CPT 1280-80)
+// -----------------------------------------------
+// / Commander (2CDR, 1CDR, HCDR)
+// / Second (1440-90), First (1920-120), High (2048-128)
+// -----------------------------------------------
+// / Marshal (RMSH, VMSH, MSHL, GMSH)
+// / Rear (2160-135), Vice (3840-240), (4096-256), Grand (7680-480)
+// -----------------------------------------------
+// / Champion (CHMPN 15360-960)
+// -----------------------------------------------
+$breakpoints: (
+	'PVT': 20em, // 320
+	'PV2': 30em, // 480
+	'SG2': 48em, // 768
+	'CSG': 64em, // 1024
+	'1LT': 75em, // 1200
+) !default;
+
+// Creates a list of static expressions or media types
+$media-expressions: (
+	'all': 'all',
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'retina2x': (
+		'(-webkit-min-device-pixel-ratio: 2)',
+		'(min-resolution: 192dpi)'
+	), 
+	'retina3x': (
+		'(-webkit-min-device-pixel-ratio: 3)',
+		'(min-resolution: 350dpi)'
+	)
+) !default;
+
+// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
+// / @example scss - Interval for pixels is defined as `1` by default
+// /  @include media(">128px") {}
+// /
+// /  /* Generates: */
+// /  @media (min-width: 129px) {}
+$unit-intervals: (
+  'px': 1, 
+  'em': 0.01, 
+  'rem': 0.1
+) !default;
+
+// ================================
+// End of Media Queries Declaration
+// ================================
+
+// * Colors Change per project requirements | use Lighten/Darken compass mixin to change the gamma of the colors
+$primary:					#1960AD !default;
+$accent:					#73a900 !default;
+$extracolor1:			#01215e !default;
+$extracolor2:			#B5E6F2 !default;
+$extracolor3:			#454d56 !default;
+
+// * Text Colors I only change the opacity of text and stay in this defaults all the time.
+$text-white:			#fff !default;
+$text-black:			#000 !default;
+
+// * Opacity change/add per project requirements | these defaults help with many elements on the project
+// * Text Opacity refers to the opacity of Black or White text in the project.
+// Black
+$B-hinttext:			0.26 !default;
+$B-subtext:				0.54 !default;
+$B-text:					0.87 !default;
+
+// White
+$W-hinttext:			0.30 !default;
+$W-subtext:				0.70 !default;
+$W-text:					1.00 !default;
+
+// * Element Opacity refers to the opacity of Black or White elements in the project
+// * these variables need to be changed/added per project, since they are relative to context
+// Black
+$B-dividers:			0.12 !default;
+$B-disabled:			0.26 !default;
+$B-icons:					0.54 !default;
+
+// White
+$W-dividers:			0.12 !default;
+$W-disabled:			0.30 !default;
+$W-icons:					1.00 !default;
+
+// * Default font Change per project requirements | just prepend, when you do try to make sure that they more or less look the same as the stack else just ignore these.
+// Macintosh fonts are small and lighter
+$title-text:			'Roboto Slab', serif !default;
+$body-text:				Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif !default;

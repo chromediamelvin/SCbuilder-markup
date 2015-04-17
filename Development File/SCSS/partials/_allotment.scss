@@ -1,0 +1,22 @@
+.time-allotments {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+
+	li {
+		border: 1px solid rgba($text-black, $B-dividers);
+		border-radius: 8px;
+		float: left;
+		margin: dynS(20, 1800, pc) dynS(10, 1200, pc);
+		text-align: center;
+
+		a {
+			color: $text-white;
+			display: block;
+			padding: 20px;
+		}
+	}
+
+}

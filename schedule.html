@@ -1,0 +1,39 @@
+
+<div ng-controller="scheduleBuilderController">
+    <h1>Schedule Builder</h1>
+
+    <div ng-show="timeAllotments">
+        <h2>Time Allotments</h2>
+        <ul class="time-allotments">
+            <li ng-repeat="eachTimeAllotment in timeAllotments" style="background-color: {{ eachTimeAllotment.color }}">
+                {{ eachTimeAllotment.name }}
+                <div ng-drag="true" ng-drag-data="eachTimeAllotment" style="background-color: {{ eachTimeAllotment.color }}">{{ eachTimeAllotment.name }}</div>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Resources</h2>
+        <ul class="time-allotments">
+            <li ng-repeat="eachResource in resources" style="background-color: pink">{{ eachResource.name }}</li>
+        </ul>
+    </div>
+
+    <hr/>
+
+    <div>
+    
+        <table cellspacing="3" cellpadding="3" border="1" class="schedule-builder">
+            <tr>
+                <th>Time Slot</th>
+                <th ng-repeat="eachStudentLevel in studentLevels">{{ eachStudentLevel.name }}</th>
+            </tr>
+            <tr ng-repeat="(i, eachTimeSlot) in timeSlots">
+                <th>{{ eachTimeSlot }}</th>
+                <td class="cells" ng-drop="true" ng-drop-success="onDropComplete($data, $event)" ng-repeat="(ii, eachStudentLevel) in studentLevels" ng-mousedown="mousedown($event)" ng-mouseup="mouseup($event)" data-cell="{{ i + '_' + $index }}" ng-mouseover="mouseover($event)">
+                    <div ng-if="getStudentLevelSchedule(eachTimeSlot, eachStudentLevel)" style="background-color:{{ getStudentLevelSchedule(eachTimeSlot, eachStudentLevel).time_allotment.color }}">{{ getStudentLevelSchedule(eachTimeSlot, eachStudentLevel).time_allotment.name }}</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
