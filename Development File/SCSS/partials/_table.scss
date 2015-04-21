@@ -1,72 +1,78 @@
-.schedule-table,
-.schedule-table-head {
-	border: 1px solid rgba($text-black, $B-dividers);
+
+.schedule-table {
 	border-collapse: collapse;
 	table-layout: fixed;
 	width: 100%;
-
-	th,
-	tr,
-	td {
+	th, td {
+		word-wrap: break-all;
+	}
+	th {
 		padding: dynS(10, 1200, pc);
-		border: 1px solid rgba($text-black, $B-dividers);
 	}
-
-	.title {
-		width: 8%;
-	}
-
-}
-
-.schedule-table-head {
-	margin-bottom: dynS(10, 1800, pc);
-}
-
-.schedule-table {
-
-	.title {
-		padding: 0;
-	}
-
-	.time {
-		font-weight: 700;
-	}
-
-	.time-slot {
-		border-bottom: 1px solid rgba($text-black, $B-dividers);
-		box-sizing: border-box;
-		font-size: dynS(12, 16, em);
-		height: 54px;
-		padding-right: 5%;
-		padding-top: 2%;
-		text-align: right;
-	}
-
-	.content {
-		padding: 0;
-		vertical-align: top;
-	}
-
-	.allotment-blocks {
+	td {
 		position: relative;
-		height: 0;
-	}
+		border: 1px solid rgba($text-black, $B-dividers);
 
-	.block {
-		color: $text-white;
-		left: 2.5%;
-		position: absolute;
-		width: 95%;
+		// Current cell cursor
+		&.active {
+			border: 2px solid lightblue;
+		}
 
-		> div {
-			border: 2px solid rgba($text-black, $B-dividers);
-			box-sizing: border-box;
-			font-size: dynS(11, 16, em);
-			line-height: 1.5em;
-			font-weight: 300;
-			overflow: hidden;
-			padding: 0 3%;
-			white-space:nowrap;
+		// Highlighted cell for expansion
+		&.highlighted {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+
+		// Assigned cells
+		&.first {
+			border-bottom: none;
+		}
+		&.middle {
+			border-top: none;
+			border-bottom: none;
+		}
+		&.last {
+			border-top: none;
+		}
+
+		// Selected assigned cells
+		&.selected {
+			border-left: 2px solid rgba(255, 0, 0, 0.3);
+			border-right: 2px solid rgba(255, 0, 0, 0.3);
+			border-top: 2px solid rgba(255, 0, 0, 0.3);
+			border-bottom: 2px solid rgba(255, 0, 0, 0.3);
+			// Stretchable assigned cells
+			&.stretchable {
+				border-left: 2px dashed rgba(255, 0, 0, 0.3);
+				border-right: 2px dashed rgba(255, 0, 0, 0.3);
+				border-top: 2px dashed rgba(255, 0, 0, 0.3);
+				border-bottom: 2px dashed rgba(255, 0, 0, 0.3);
+			}
+			&.first {
+				border-bottom: none;
+			}
+			&.middle {
+				border-top: none;
+				border-bottom: none;
+			}
+			&.last {
+				border-top: none;
+			}
+		}
+
+		// Draggable/expandable time allotment
+		[ng-drag] {
+			position: absolute;
+			width: 100%;
+			top: 0;
+			bottom: 0;
+			span, p {
+				display: block;
+				margin: 5px 10px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 		}
 
 	}

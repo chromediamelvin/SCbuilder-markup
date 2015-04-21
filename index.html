@@ -31,99 +31,245 @@
 				<li class="ash"><a href="">resource 5</a></li>
 			</ul>
 		</div>
-		<hr/>
-			<p>10 minute block = 18px of Height</p>
-			<p>1 time slot = 30 minutes</p>
-		<div class="schedule-wrapper">
-			<table class="schedule-table-head">
-				<tbody>
-					<tr>
-						<td class="title"></td>
-						<td>Grade 1</td>
-						<td>Grade 2</td>
-						<td>Grade 3</td>
-						<td>Grade 4</td>
-						<td>Grade 5</td>
-						<td>Grade 6</td>
-					</tr>
-				</tbody>
-			</table>
 
-			<table class="schedule-table">
-				<tbody>
-					<tr>
-						<td class="title">
-							<div><div class="time-slot">6:00am</div></div>
-							<div><div class="time-slot">6:30am</div></div>
-							<div><div class="time-slot">7:00am</div></div>
-							<div><div class="time-slot">7:30am</div></div>
-							<div><div class="time-slot">8:00am</div></div>
-							<div><div class="time-slot">8:30am</div></div>
-							<div><div class="time-slot">9:00am</div></div>
-							<div><div class="time-slot">9:30am</div></div>
-							<div><div class="time-slot">10:00am</div></div>
-							<div><div class="time-slot">10:30am</div></div>
-							<div><div class="time-slot">11:00am</div></div>
-							<div><div class="time-slot">11:30am</div></div>
-							<div><div class="time-slot">12:00nn</div></div>
-							<div><div class="time-slot">12:30pm</div></div>
-							<div><div class="time-slot">1:00pm</div></div>
-							<div><div class="time-slot">1:30pm</div></div>
-							<div><div class="time-slot">2:00pm</div></div>
-							<div><div class="time-slot">2:30pm</div></div>
-							<div><div class="time-slot">3:00pm</div></div>
-							<div><div class="time-slot">3:30pm</div></div>
-							<div><div class="time-slot">4:00pm</div></div>
-							<div><div class="time-slot">4:30pm</div></div>
-							<div><div class="time-slot">5:00pm</div></div>
-							<div><div class="time-slot">5:30pm</div></div>
-							<div><div class="time-slot">6:00pm</div></div>
-							<div><div class="time-slot">6:30pm</div></div>
-							<div><div class="time-slot">7:00pm</div></div>
-						</td>
-						<td class="content"></td>
-						<td class="content">
-							<div class="allotment-blocks">
-								<div class="block" style="top:54px;">
-									<div class="red" style="height:100px;">
-										<span class="time">1h</span>
-										<br>
-										Literature
-									</div>
-								</div>
-								<div class="block" style="top:162px;">
-									<div class="orange" style="height:150px;">
-										<span class="time">1h 30m</span>
-										<br>
-										Music
-									</div>
-								</div>
-							</div>
-						</td>
-						<td class="content"></td>
-						<td class="content"></td>
-						<td class="content">
-							<div class="allotment-blocks">
-								<div class="block" style="top:108px;">
-									<div class="green" style="height:50px;">
-										<span class="time">30m</span>
-										<br>
-										Chemistry
-									</div>
-								</div>
-								<div class="block" style="top:216px;">
-									<div class="indigo" style="height: 18px;">
-										<span class="time">10m</span>
-										&nbsp;&ndash;&nbsp;
-										Physical Education
-									</div>
-								</div>
-							</div>
-						</td>
-						<td class="content"></td>
-					</tr>
-				</tbody>
-			</table>
+		<div class="schedule-wrapper">
+			
+			<table id="schedule-builder" class="schedule-table" cellpadding="0">
+            	<thead>
+    				<tr>
+		                <th class="title">Time Slot</th>
+		                <th>Kindergarten</th>
+		                <th>Elementary</th>
+		                <th>First Grade</th>
+		                <th>Second Grade</th>
+		                <th>Third Grade</th>
+		                <th>4th Grade</th>
+		                <th>5th Grade</th>
+		                <th>6th Grade</th>
+		                <th>7th Grade</th>
+		                <th>8th Grade</th>
+		                <th>9th Grade</th>
+		                <th>test</th>
+            		</tr>
+        		</thead>
+        		<tbody>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td class="active"></td>
+        				<td></td>
+        				<td>
+        					<div ng-drag="isDraggable" style="background-color: rgb(0, 255, 0); cursor: default;">
+        						<span>Reading and Writing</span>
+        					</div>
+        				</td>
+        				<td class="first">
+        					<div ng-drag="isDraggable" style="background-color: rgb(255, 255, 0); cursor: default;">
+        						<span>Science</span>
+        					</div>
+        				</td>
+        				<td class="selected first">
+        					<div ng-drag="isDraggable" style="background-color: rgb(125, 125, 0); cursor: default;">
+        						<span>Mathematics</span>
+        					</div>
+        				</td>
+        				<td></td>
+        				<td class="selected stretchable first">
+        					<div ng-drag="isDraggable" style="background-color: rgb(0, 125, 125); cursor: default;">
+        						<span>Literature</span>
+        					</div>
+        				</td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td class="last">
+        					<div ng-drag="isDraggable" style="background-color: rgb(255, 255, 0); cursor: default;">
+        						<span>Science</span>
+        					</div>
+        				</td>
+        				<td class="selected middle">
+        					<div ng-drag="isDraggable" style="background-color: rgb(125, 125, 0); cursor: default;">
+        						<span>Mathematics</span>
+        					</div>
+        				</td>
+        				<td></td>
+        				<td class="selected stretchable middle">
+        					<div ng-drag="isDraggable" style="background-color: rgb(0, 125, 125); cursor: default;">
+        						<span>Literature</span>
+        					</div>
+        				</td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td class="selected">
+        					<div ng-drag="isDraggable" style="background-color: rgb(0, 255, 255); cursor: default;">
+        						<span>Speech and Grammar</span>
+        					</div>
+        				</td>
+        				<td></td>
+        				<td class="selected middle">
+        					<div ng-drag="isDraggable" style="background-color: rgb(125, 125, 0); cursor: default;">
+        						<span>Mathematics</span>
+        					</div>
+        				</td>
+        				<td></td>
+        				<td class="selected stretchable last">
+        					<div ng-drag="isDraggable" style="background-color: rgb(0, 125, 125); cursor: default;">
+        						<span>Literature</span>
+        					</div>
+        				</td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td class="selected last">
+        					<div ng-drag="isDraggable" style="background-color: rgb(125, 125, 0); cursor: default;">
+        						<span>Mathematics</span>
+        					</div>
+        				</td>
+        				<td></td>
+        				<td class="highlighted">
+        					
+        				</td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td class="highlighted">
+        					
+        				</td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        			<tr>
+        				<th>6:00 AM</th>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        				<td></td>
+        			</tr>
+        		</tbody>
+    		</table>
+
+			
 		</div>
 	</div>
 </body>
