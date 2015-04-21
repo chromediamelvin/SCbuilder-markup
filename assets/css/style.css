@@ -97,7 +97,7 @@ h5 {
 }
 .schedule-table td [ng-drag] span, .schedule-table td [ng-drag] p {
   display: block;
-  margin: 5px 10px;
+  margin: 10px 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
