@@ -13,6 +13,24 @@
 		position: relative;
 		border: 1px solid rgba($text-black, $B-dividers);
 
+		// Draggable/expandable time allotment
+		[ng-drag] {
+			position: absolute;
+			width: 100%;
+			top: 0;
+			bottom: 0;
+			z-index: 10;
+			span, p {
+				font-size: 12px;
+				line-height: 1.5em;
+				display: block;
+				margin: 10px 10px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+
 		// Current cell cursor
 		&.active {
 			border: 2px solid lightblue;
@@ -37,41 +55,51 @@
 
 		// Selected assigned cells
 		&.selected {
-			border-left: 2px solid rgba(255, 0, 0, 0.3);
-			border-right: 2px solid rgba(255, 0, 0, 0.3);
-			border-top: 2px solid rgba(255, 0, 0, 0.3);
-			border-bottom: 2px solid rgba(255, 0, 0, 0.3);
+			[ng-drag] {
+				border-left: 2px solid rgba(255, 0, 0, 1);
+				border-right: 2px solid rgba(255, 0, 0, 1);
+				border-top: 2px solid rgba(255, 0, 0, 1);
+				border-bottom: 2px solid rgba(255, 0, 0, 1);
+				&.inactive {
+					border: none;
+					z-index: 1;
+				}
+			}
+			
 			// Stretchable assigned cells
 			&.stretchable {
-				border-left: 2px dashed rgba(255, 0, 0, 0.3);
-				border-right: 2px dashed rgba(255, 0, 0, 0.3);
-				border-top: 2px dashed rgba(255, 0, 0, 0.3);
-				border-bottom: 2px dashed rgba(255, 0, 0, 0.3);
+				[ng-drag] {
+					border-left: 2px dashed rgba(255, 0, 0, 1);
+					border-right: 2px dashed rgba(255, 0, 0, 1);
+					border-top: 2px dashed rgba(255, 0, 0, 1);
+					border-bottom: 2px dashed rgba(255, 0, 0, 1);
+				}
 			}
 			&.first {
-				border-bottom: none;
+				[ng-drag] {
+					border-bottom: none;
+				}
 			}
 			&.middle {
-				border-top: none;
-				border-bottom: none;
+			 	[ng-drag] {
+					border-top: none;
+					border-bottom: none;
+				}
 			}
 			&.last {
-				border-top: none;
+				[ng-drag] {
+					border-top: none;
+				}
 			}
 		}
-
-		// Draggable/expandable time allotment
-		[ng-drag] {
-			position: absolute;
-			width: 100%;
-			top: 0;
-			bottom: 0;
-			span, p {
-				display: block;
-				margin: 10px 10px;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
+		
+		// Cell is shared by a resource
+		&.shared {
+			[ng-drag] {
+				width: 50%;
+				&:last-child {
+					right: 0;
+				}
 			}
 		}
 

@@ -94,13 +94,23 @@
         					</div>
         				</td>
         				<td></td>
-        				<td>
+        				<td class="shared selected">
                             <div ng-drag="isDraggable" style="background-color: rgb(26, 185, 146); cursor: default;">
                                 <span>Physics</span>
-                            </div>               
+                            </div>
+                            <div ng-drag="isDraggable" class="inactive" style="background-color: rgb(58, 189, 65); cursor: default;">
+                                <span>Resource 1</span>
+                            </div>
                         </td>
         				<td></td>
-        				<td></td>
+        				<td class="shared selected first">
+                            <div ng-drag="isDraggable" style="background-color: rgb(26, 185, 146); cursor: default;">
+                                <span>Physics</span>
+                            </div>
+                            <div ng-drag="isDraggable" class="inactive" style="background-color: rgb(58, 189, 65); cursor: default;">
+                                <span>Resource 1</span>
+                            </div>            
+                        </td>
         				<td></td>
         			</tr>
         			<tr>
@@ -127,7 +137,14 @@
         				<td></td>
         				<td></td>
         				<td></td>
-        				<td></td>
+        				<td class="shared selected last">
+                            <div ng-drag="isDraggable" style="background-color: rgb(26, 185, 146); cursor: default;">
+                                <span>Physics</span>
+                            </div>
+                            <div ng-drag="isDraggable" class="inactive" style="background-color: rgb(58, 189, 65); cursor: default;">
+                                <span>Resource 1</span>
+                            </div>            
+                        </td>
         				<td></td>
         			</tr>
         			<tr>
@@ -154,7 +171,11 @@
         				<td></td>
         				<td></td>
         				<td></td>
-        				<td></td>
+        				<td class="shared">
+                            <div ng-drag="isDraggable" class="inactive" style="background-color: rgb(58, 189, 65); cursor: default;">
+                                <span>Resource 1</span>
+                            </div>            
+                        </td>
         				<td></td>
         			</tr>
         			<tr>

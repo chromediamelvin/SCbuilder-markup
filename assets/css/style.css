@@ -51,6 +51,22 @@ h5 {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
+.schedule-table td [ng-drag] {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.schedule-table td [ng-drag] span, .schedule-table td [ng-drag] p {
+  font-size: 12px;
+  line-height: 1.5em;
+  display: block;
+  margin: 10px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .schedule-table td.active {
   border: 2px solid lightblue;
 }
@@ -67,40 +83,37 @@ h5 {
 .schedule-table td.last {
   border-top: none;
 }
-.schedule-table td.selected {
-  border-left: 2px solid rgba(255, 0, 0, 0.3);
-  border-right: 2px solid rgba(255, 0, 0, 0.3);
-  border-top: 2px solid rgba(255, 0, 0, 0.3);
-  border-bottom: 2px solid rgba(255, 0, 0, 0.3);
+.schedule-table td.selected [ng-drag] {
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
 }
-.schedule-table td.selected.stretchable {
-  border-left: 2px dashed rgba(255, 0, 0, 0.3);
-  border-right: 2px dashed rgba(255, 0, 0, 0.3);
-  border-top: 2px dashed rgba(255, 0, 0, 0.3);
-  border-bottom: 2px dashed rgba(255, 0, 0, 0.3);
+.schedule-table td.selected [ng-drag].inactive {
+  border: none;
+  z-index: 1;
 }
-.schedule-table td.selected.first {
+.schedule-table td.selected.stretchable [ng-drag] {
+  border-left: 2px dashed red;
+  border-right: 2px dashed red;
+  border-top: 2px dashed red;
+  border-bottom: 2px dashed red;
+}
+.schedule-table td.selected.first [ng-drag] {
   border-bottom: none;
 }
-.schedule-table td.selected.middle {
+.schedule-table td.selected.middle [ng-drag] {
   border-top: none;
   border-bottom: none;
 }
-.schedule-table td.selected.last {
+.schedule-table td.selected.last [ng-drag] {
   border-top: none;
 }
-.schedule-table td [ng-drag] {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  bottom: 0;
+.schedule-table td.shared [ng-drag] {
+  width: 50%;
 }
-.schedule-table td [ng-drag] span, .schedule-table td [ng-drag] p {
-  display: block;
-  margin: 10px 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.schedule-table td.shared [ng-drag]:last-child {
+  right: 0;
 }
 
 .time-allotments {
